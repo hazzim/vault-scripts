@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+#Please try to use environment variables for this values:
+#export VAULT_ADDR=http://127.0.0.1:8200
+#export VAULT_TOKEN=<vault token>
+
+
+#Get token from Vault and assign to environment variable
+SECRET=$(vault read -field=db_pass secret/db_pass)
+
+echo 'Value from environment variable'
+echo $SECRET
